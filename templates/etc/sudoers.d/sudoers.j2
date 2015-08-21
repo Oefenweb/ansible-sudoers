@@ -3,3 +3,28 @@
 {% for item in item.value.defaults %}
 Defaults	{{ item }}
 {% endfor %}
+
+# Host alias specification
+{% for item in sudoers_sudoers.host_aliases %}
+Host_Alias	{{ item.alias }} = {{ item.list }}
+{% endfor %}
+
+# User alias specification
+{% for item in sudoers_sudoers.user_aliases %}
+User_Alias	{{ item.alias }} = {{ item.list }}
+{% endfor %}
+
+# Cmnd alias specification
+{% for item in sudoers_sudoers.cmnd_aliases %}
+Cmnd_Alias	{{ item.alias }} = {{ item.list }}
+{% endfor %}
+
+# User privilege specification
+{% for item in sudoers_sudoers.user_privileges %}
+{{ item.user }}	{{ item.privilege }}
+{% endfor %}
+
+# Group privilege specification
+{% for item in sudoers_sudoers.group_privileges %}
+%{{ item.group }}	{{ item.privilege }}
+{% endfor %}

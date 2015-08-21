@@ -30,6 +30,11 @@
       user_privileges:
         - user: root
           privilege: "ALL=(ALL:ALL) ALL"
+      group_privileges:
+        - group: admin
+          privilege: "ALL=(ALL) ALL"
+        - group: sudo
+          privilege: "ALL=NOPASSWD:ALL"
           
           
       include_sudoers_d: true

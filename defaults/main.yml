@@ -10,9 +10,13 @@ sudoers_sudoers:
   user_aliases: []
   cmnd_aliases: []
   user_privileges:
-    root
-      - "ALL=(ALL:ALL) ALL"
-    
+    - user: root
+      privilege: "ALL=(ALL:ALL) ALL"
+  group_privileges:
+    - group: admin
+      privilege: "ALL=(ALL) ALL"
+    - group: sudo
+      privilege: "ALL=NOPASSWD:ALL"
   include_sudoers_d: false
 
 sudoers_sudoers_d_files: {}
