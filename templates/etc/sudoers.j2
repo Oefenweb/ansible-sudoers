@@ -1,0 +1,45 @@
+# {{ ansible_managed }}
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+{% for item in sudoers_sudoers.defaults %}
+Defaults	{{ item }}
+{% endfor %}
+
+# Host alias specification
+{% for item in sudoers_sudoers.host_aliases %}
+Host_Alias	{{ item.alias }} = {{ item.list }}
+{% endfor %}
+
+# User alias specification
+{% for item in sudoers_sudoers.user_aliases %}
+User_Alias	{{ item.alias }} = {{ item.list }}
+{% endfor %}
+
+# Cmnd alias specification
+{% for item in sudoers_sudoers.cmnd_aliases %}
+Cmnd_Alias	{{ item.alias }} = {{ item.list }}
+{% endfor %}
+
+# User privilege specification
+{% for item in sudoers_sudoers.user_privileges %}
+{{ item.user }}	{{ item.privilege }}
+{% endfor %}
+
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo	ALL=NOPASSWD:ALL
+
+# See sudoers(5) for more information on "#include" directives:
+
+{% if sudoers_sudoers.include_sudoers_d is defined and sudoers_sudoers.include_sudoers_d %}
+#includedir /etc/sudoers.d
+{% else %}
+{% endif %}

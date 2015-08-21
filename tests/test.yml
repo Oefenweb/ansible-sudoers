@@ -1,0 +1,8 @@
+# test file for sudoers
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - ansible-sudoers
+  vars:
+    sudoers_include_sudoers_d: true
