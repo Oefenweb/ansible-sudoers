@@ -5,26 +5,26 @@ Defaults	{{ item }}
 {% endfor %}
 
 # Host alias specification
-{% for item in sudoers_sudoers.host_aliases %}
+{% for item in item.value.host_aliases | default([]) %}
 Host_Alias	{{ item.alias }} = {{ item.list }}
 {% endfor %}
 
 # User alias specification
-{% for item in sudoers_sudoers.user_aliases %}
+{% for item in item.value.user_aliases | default([]) %}
 User_Alias	{{ item.alias }} = {{ item.list }}
 {% endfor %}
 
 # Cmnd alias specification
-{% for item in sudoers_sudoers.cmnd_aliases %}
+{% for item in item.value.cmnd_aliases | default([]) %}
 Cmnd_Alias	{{ item.alias }} = {{ item.list }}
 {% endfor %}
 
-# User privilege specification
-{% for item in sudoers_sudoers.user_privileges %}
-{{ item.user }}	{{ item.privilege }}
+# Runas alias specification
+{% for item in item.value.runas_aliases | default([]) %}
+Runas_Alias	{{ item.alias }} = {{ item.list }}
 {% endfor %}
 
-# Group privilege specification
-{% for item in sudoers_sudoers.group_privileges %}
-%{{ item.group }}	{{ item.privilege }}
+# User/Group privilege specification
+{% for item in item.value.privileges | default([]) %}
+{{ item.name }}	{{ item.entry }}
 {% endfor %}

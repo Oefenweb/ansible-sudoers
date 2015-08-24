@@ -12,33 +12,30 @@ Defaults	{{ item }}
 {% endfor %}
 
 # Host alias specification
-{% for item in sudoers_sudoers.host_aliases %}
+{% for item in sudoers_sudoers.host_aliases | default([]) %}
 Host_Alias	{{ item.alias }} = {{ item.list }}
 {% endfor %}
 
 # User alias specification
-{% for item in sudoers_sudoers.user_aliases %}
+{% for item in sudoers_sudoers.user_aliases | default([]) %}
 User_Alias	{{ item.alias }} = {{ item.list }}
 {% endfor %}
 
 # Cmnd alias specification
-{% for item in sudoers_sudoers.cmnd_aliases %}
+{% for item in sudoers_sudoers.cmnd_aliases | default([]) %}
 Cmnd_Alias	{{ item.alias }} = {{ item.list }}
 {% endfor %}
 
-# User privilege specification
-{% for item in sudoers_sudoers.user_privileges %}
-{{ item.user }}	{{ item.privilege }}
+# Runas alias specification
+{% for item in sudoers_sudoers.runas_aliases | default([]) %}
+Runas_Alias	{{ item.alias }} = {{ item.list }}
 {% endfor %}
 
-# Group privilege specification
-{% for item in sudoers_sudoers.group_privileges %}
-%{{ item.group }}	{{ item.privilege }}
+# User/Group privilege specification
+{% for item in sudoers_sudoers.privileges | default([]) %}
+{{ item.name }}	{{ item.entry }}
 {% endfor %}
 
 # See sudoers(5) for more information on "#include" directives:
 
-{% if sudoers_sudoers.include_sudoers_d is defined and sudoers_sudoers.include_sudoers_d %}
 #includedir /etc/sudoers.d
-{% else %}
-{% endif %}

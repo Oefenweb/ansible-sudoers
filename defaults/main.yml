@@ -6,17 +6,12 @@ sudoers_sudoers:
     - exempt_group=sudo
     - mail_badpass
     - secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-  host_aliases: []
-  user_aliases: []
-  cmnd_aliases: []
-  user_privileges:
-    - user: root
-      privilege: "ALL=(ALL:ALL) ALL"
-  group_privileges:
-    - group: admin
-      privilege: "ALL=(ALL) ALL"
-    - group: sudo
-      privilege: "ALL=NOPASSWD:ALL"
-  include_sudoers_d: false
+  privileges:
+    - name: root
+      entry: "ALL=(ALL:ALL) ALL"
+    - name: "%admin"
+      entry: "ALL=(ALL) ALL"
+    - name: "%sudo"
+      entry: "ALL=NOPASSWD:ALL"
 
 sudoers_sudoers_d_files: {}

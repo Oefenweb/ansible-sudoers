@@ -22,6 +22,7 @@
   template:
     src: etc/sudoers.d/sudoers.j2
     dest: "/etc/sudoers.d/{{ item.key }}"
+    validate: "visudo -cf %s"
     owner: root
     group: root
     mode: 0440

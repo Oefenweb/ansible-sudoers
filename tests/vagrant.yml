@@ -27,17 +27,13 @@
           list: /usr/bin/kill
         - alias: HALT
           list: /usr/sbin/halt
-      user_privileges:
-        - user: root
-          privilege: "ALL=(ALL:ALL) ALL"
-      group_privileges:
-        - group: admin
-          privilege: "ALL=(ALL) ALL"
-        - group: sudo
-          privilege: "ALL=NOPASSWD:ALL"
-          
-          
-      include_sudoers_d: true
+      privileges:
+        - name: root
+          entry: "ALL=(ALL:ALL) ALL"
+        - name: "%admin"
+          entry: "ALL=(ALL) ALL"
+        - name: "%sudo"
+          entry: "ALL=NOPASSWD:ALL"
     sudoers_sudoers_d_files:
       test:
         defaults:
@@ -45,3 +41,9 @@
           - exempt_group=sudo
           - mail_badpass
           - secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        host_aliases:
+          - alias: WORKSTATIONS
+            list: 128.138.0.0/255.255.0.0
+        privileges:
+          - name: test
+            entry: "ALL=(ALL:ALL) ALL"
