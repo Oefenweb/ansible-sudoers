@@ -10,7 +10,7 @@ None
 
 #### Variables
 
-* `sudoers_sudoers`: sudoers configuration file declarations
+* `sudoers_sudoers`: `/etc/sudoers` file declarations
 * `sudoers_sudoers.defaults`: [default: see `defaults/main.yml`]: Default configuration options
 * `sudoers_sudoers.host_aliases`: [default: `[]`]: A list of aliases of type `Host_Alias`
 * `sudoers_sudoers.host_aliases.name`: Name of the alias
@@ -28,7 +28,7 @@ None
 * `sudoers_sudoers.privileges.name`: Name of user or group (group should be prefixed with '%')
 * `sudoers_sudoers.privileges.entry`: A privilege entry
 
-* `sudoers_sudoers_d_files` [default: `{}`]: sudoers configuration file declarations
+* `sudoers_sudoers_d_files` [default: `{}`]: `/etc/sudoers.d/*` file(s) declarations
 * `sudoers_sudoers_d_files.key`: The name of the sudoers configuration file (e.g `vagrant`)
 * `sudoers_sudoers_d_files.key.defaults` [default: `[]`]: Default configuration options
 * `sudoers_sudoers_d_files.key.host_aliases` [default: `[]`]: A list of aliases of type `Host_Alias`
