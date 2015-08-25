@@ -13,22 +13,22 @@ Defaults	{{ item }}
 
 # Host alias specification
 {% for item in sudoers_sudoers.host_aliases | default([]) %}
-Host_Alias	{{ item.alias }} = {{ item.list }}
+Host_Alias	{{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # User alias specification
 {% for item in sudoers_sudoers.user_aliases | default([]) %}
-User_Alias	{{ item.alias }} = {{ item.list }}
+User_Alias	{{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # Cmnd alias specification
 {% for item in sudoers_sudoers.cmnd_aliases | default([]) %}
-Cmnd_Alias	{{ item.alias }} = {{ item.list }}
+Cmnd_Alias	{{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # Runas alias specification
 {% for item in sudoers_sudoers.runas_aliases | default([]) %}
-Runas_Alias	{{ item.alias }} = {{ item.list }}
+Runas_Alias	{{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # User/Group privilege specification

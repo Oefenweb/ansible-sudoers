@@ -6,22 +6,22 @@ Defaults	{{ item }}
 
 # Host alias specification
 {% for item in item.value.host_aliases | default([]) %}
-Host_Alias	{{ item.alias }} = {{ item.list }}
+Host_Alias	{{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # User alias specification
 {% for item in item.value.user_aliases | default([]) %}
-User_Alias	{{ item.alias }} = {{ item.list }}
+User_Alias	{{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # Cmnd alias specification
 {% for item in item.value.cmnd_aliases | default([]) %}
-Cmnd_Alias	{{ item.alias }} = {{ item.list }}
+Cmnd_Alias	{{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # Runas alias specification
 {% for item in item.value.runas_aliases | default([]) %}
-Runas_Alias	{{ item.alias }} = {{ item.list }}
+Runas_Alias	{{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # User/Group privilege specification

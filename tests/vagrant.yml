@@ -13,20 +13,20 @@
         - mail_badpass
         - secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       host_aliases:
-        - alias: CUNETS
-          list: 128.138.0.0/255.255.0.0
-        - alias: SERVERS
-          list: master, mail, www, ns
+        - name: CUNETS
+          members: 128.138.0.0/255.255.0.0
+        - name: SERVERS
+          members: master, mail, www, ns
       user_aliases:
-        - alias: FULLTIMERS
-          list: millert, mikef, dowdy
-        - alias: PARTTIMERS
-          list: bostley, jwfox, crawl
+        - name: FULLTIMERS
+          members: millert, mikef, dowdy
+        - name: PARTTIMERS
+          members: bostley, jwfox, crawl
       cmnd_aliases:
-        - alias: KILL
-          list: /usr/bin/kill
-        - alias: HALT
-          list: /usr/sbin/halt
+        - name: KILL
+          members: /usr/bin/kill
+        - name: HALT
+          members: /usr/sbin/halt
       privileges:
         - name: root
           entry: "ALL=(ALL:ALL) ALL"
@@ -42,8 +42,8 @@
           - mail_badpass
           - secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
         host_aliases:
-          - alias: WORKSTATIONS
-            list: 128.138.0.0/255.255.0.0
+          - name: WORKSTATIONS
+            members: 128.138.0.0/255.255.0.0
         privileges:
           - name: test
             entry: "ALL=(ALL:ALL) ALL"
