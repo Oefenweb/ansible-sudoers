@@ -8,7 +8,9 @@
 # See the man page for details on how to write a sudoers file.
 #
 {% for item in sudoers_sudoers.defaults %}
+{% if item != '' %}
 Defaults {{ item }}
+{% endif %}
 {% endfor %}
 
 # Host alias specification

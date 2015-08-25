@@ -5,3 +5,9 @@
   sudo: true
   roles:
     - ../../
+  vars:
+    sudoers_sudoers_d_files:
+      vagrant:
+        privileges:
+          - name: vagrant
+            entry: 'ALL=(ALL) NOPASSWD:ALL'
