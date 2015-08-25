@@ -8,17 +8,7 @@
     cache_valid_time: 3600
   tags: [configuration, sudoers, sudoers-install]
 
-- name: update configuration file
-  template:
-    src: etc/sudoers.j2
-    dest: /etc/sudoers
-    validate: "visudo -cf %s"
-    owner: root
-    group: root
-    mode: 0440
-  tags: [configuration, sudoers, sudoers-configuration]
-
-- name: update configuration files
+- name: update specific configuration files
   template:
     src: etc/sudoers.d/sudoers.j2
     dest: "/etc/sudoers.d/{{ item.key }}"
@@ -26,5 +16,15 @@
     owner: root
     group: root
     mode: 0440
-  with_dict: sudoers_sudoers_d_files    
+  with_dict: sudoers_sudoers_d_files
+  tags: [configuration, sudoers, sudoers-configuration]
+
+- name: update global configuration file
+  template:
+    src: etc/sudoers.j2
+    dest: /etc/sudoers
+    validate: "visudo -cf %s"
+    owner: root
+    group: root
+    mode: 0440
   tags: [configuration, sudoers, sudoers-configuration]
