@@ -1,0 +1,17 @@
+# defaults file for sudoers
+---
+sudoers_sudoers:
+  defaults:
+    - env_reset
+    - exempt_group=sudo
+    - mail_badpass
+    - secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  privileges:
+    - name: root
+      entry: "ALL=(ALL:ALL) ALL"
+    - name: "%admin"
+      entry: "ALL=(ALL) ALL"
+    - name: "%sudo"
+      entry: "ALL=NOPASSWD:ALL"
+
+sudoers_sudoers_d_files: {}
