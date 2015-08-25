@@ -1,6 +1,6 @@
 # {{ ansible_managed }}
 
-{% for item in item.value.defaults %}
+{% for item in item.value.defaults | default([]) %}
 Defaults	{{ item }}
 {% endfor %}
 
