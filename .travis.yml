@@ -2,9 +2,6 @@
 language: python
 python: "2.7"
 
-services:
-  - mysql
-
 env:
   - ANSIBLE_VERSION=latest
   - ANSIBLE_VERSION=1.9.2
