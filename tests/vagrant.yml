@@ -4,10 +4,10 @@
   remote_user: vagrant
   sudo: true
   roles:
-    - sudoers
+    - ../../
   vars:
     sudoers_sudoers_d_files:
-      travis:
+      vagrant:
         privileges:
-          - name: travis
-            entry: "ALL=NOPASSWD:ALL"
+          - name: vagrant
+            entry: 'ALL=(ALL) NOPASSWD:ALL'
