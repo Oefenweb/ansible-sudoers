@@ -8,10 +8,10 @@ sudoers_sudoers:
     - secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
   privileges:
     - name: root
-      entry: "ALL=(ALL:ALL) ALL"
-    - name: "%admin"
-      entry: "ALL=(ALL) ALL"
-    - name: "%sudo"
-      entry: "ALL=NOPASSWD:ALL"
+      entry: 'ALL=(ALL:ALL) ALL'
+    - name: '%admin'
+      entry: 'ALL=(ALL) ALL'
+    - name: '%sudo'
+      entry: 'ALL=NOPASSWD:ALL'
 
 sudoers_sudoers_d_files: {}

@@ -17,7 +17,7 @@
     group: root
     mode: 0440
   with_dict: sudoers_sudoers_d_files
-  tags: [configuration, sudoers, sudoers-configuration]
+  tags: [configuration, sudoers, sudoers-configuration, sudoers-configuration-sudoers-d]
 
 - name: update global configuration file
   template:
@@ -27,4 +27,4 @@
     owner: root
     group: root
     mode: 0440
-  tags: [configuration, sudoers, sudoers-configuration]
+  tags: [configuration, sudoers, sudoers-configuration, sudoers-configuration-sudoers]

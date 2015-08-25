@@ -3,7 +3,7 @@
 galaxy_info:
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
-  description: Manage sudoers in Debian-like systems
+  description: Manage sudoers and sudoers.d in Debian-like systems
   license: MIT
   min_ansible_version: 1.6
   platforms:

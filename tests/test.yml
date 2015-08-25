@@ -3,10 +3,10 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-sudoers
+    - ../../
   vars:
     sudoers_sudoers_d_files:
       travis:
         privileges:
           - name: travis
-            entry: "ALL=NOPASSWD:ALL"
+            entry: 'ALL=NOPASSWD:ALL'

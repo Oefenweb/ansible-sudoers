@@ -1,30 +1,30 @@
 # {{ ansible_managed }}
 
 {% for item in item.value.defaults | default([]) %}
-Defaults	{{ item }}
+Defaults {{ item }}
 {% endfor %}
 
 # Host alias specification
 {% for item in item.value.host_aliases | default([]) %}
-Host_Alias	{{ item.name }} = {{ item.members }}
+Host_Alias {{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # User alias specification
 {% for item in item.value.user_aliases | default([]) %}
-User_Alias	{{ item.name }} = {{ item.members }}
+User_Alias {{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # Cmnd alias specification
 {% for item in item.value.cmnd_aliases | default([]) %}
-Cmnd_Alias	{{ item.name }} = {{ item.members }}
+Cmnd_Alias {{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # Runas alias specification
 {% for item in item.value.runas_aliases | default([]) %}
-Runas_Alias	{{ item.name }} = {{ item.members }}
+Runas_Alias {{ item.name }} = {{ item.members }}
 {% endfor %}
 
 # User/Group privilege specification
 {% for item in item.value.privileges | default([]) %}
-{{ item.name }}	{{ item.entry }}
+{{ item.name }} {{ item.entry }}
 {% endfor %}
