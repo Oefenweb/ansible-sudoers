@@ -4,5 +4,3 @@
   remote_user: root
   roles:
     - ansible-sudoers
-  vars:
-    sudoers_include_sudoers_d: true
