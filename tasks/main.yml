@@ -6,7 +6,10 @@
     state: latest
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  tags: [configuration, sudoers, sudoers-install]
+  tags:
+    - configuration
+    - sudoers
+    - sudoers-install
 
 - name: update specific configuration files
   template:
@@ -16,8 +19,12 @@
     owner: root
     group: root
     mode: 0440
-  with_dict: sudoers_sudoers_d_files
-  tags: [configuration, sudoers, sudoers-configuration, sudoers-configuration-sudoers-d]
+  with_dict: "{{ sudoers_sudoers_d_files }}"
+  tags:
+    - configuration
+    - sudoers
+    - sudoers-configuration
+    - sudoers-configuration-sudoers-d
 
 - name: update global configuration file
   template:
@@ -27,4 +34,8 @@
     owner: root
     group: root
     mode: 0440
-  tags: [configuration, sudoers, sudoers-configuration, sudoers-configuration-sudoers]
+  tags:
+    - configuration
+    - sudoers
+    - sudoers-configuration
+    - sudoers-configuration-sudoers
