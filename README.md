@@ -1,6 +1,6 @@
 ## sudoers
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-sudoers.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-sudoers) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-sudoers-blue.svg)](https://galaxy.ansible.com/list#/roles/4827)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-sudoers.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-sudoers) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-sudoers-blue.svg)](https://galaxy.ansible.com/tersmitten/sudoers)
 
 Manage sudoers and sudoers.d in Debian-like systems.
 
