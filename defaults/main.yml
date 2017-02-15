@@ -1,16 +1,7 @@
 # defaults file for sudoers
 ---
 sudoers_sudoers:
-  defaults:
-    - env_reset
-    - "{{ 'mail_badpass' if (ansible_distribution == 'Ubuntu' and ansible_distribution_version | version_compare('14.04', '>=') or ansible_distribution == 'Debian' and ansible_distribution_version | version_compare('8.0', '>=')) else '' }}"
-    - "{{ 'secure_path=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"' if (ansible_distribution == 'Ubuntu' and ansible_distribution_version | version_compare('12.04', '>=') or ansible_distribution == 'Debian' and ansible_distribution_version | version_compare('7.0', '>=')) else '' }}"
-  privileges:
-    - name: root
-      entry: "{{ 'ALL=(ALL:ALL) ALL' if (ansible_distribution == 'Ubuntu' and ansible_distribution_version | version_compare('12.04', '>=') or ansible_distribution == 'Debian' and ansible_distribution_version | version_compare('7.0', '>=')) else 'ALL=(ALL) ALL' }}"
-    - name: '%admin'
-      entry: 'ALL=(ALL) ALL'
-    - name: '%sudo'
-      entry: "{{ 'ALL=(ALL:ALL) ALL' if (ansible_distribution == 'Ubuntu' and ansible_distribution_version | version_compare('12.04', '>=') or ansible_distribution == 'Debian' and ansible_distribution_version | version_compare('7.0', '>=')) else 'ALL=(ALL) ALL' }}"
+  defaults: "{{ sudoers_sudoers_preset_defaults }}"
+  privileges: "{{ sudoers_sudoers_preset_privileges }}"
 
 sudoers_sudoers_d_files: {}
