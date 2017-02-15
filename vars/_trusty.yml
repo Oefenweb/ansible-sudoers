@@ -1,0 +1,13 @@
+# vars file for sudoers
+---
+sudoers_sudoers_preset_defaults:
+  - env_reset
+  - mail_badpass
+  - 'secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"'
+sudoers_sudoers_preset_privileges:
+  - name: root
+    entry: 'ALL=(ALL:ALL) ALL'
+  - name: '%admin'
+    entry: 'ALL=(ALL) ALL'
+  - name: '%sudo'
+    entry: 'ALL=(ALL:ALL) ALL'
