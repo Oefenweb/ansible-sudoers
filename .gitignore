@@ -20,7 +20,7 @@ Thumbs.db
 /.idea
 
 # Vagrant files #
-.sudoers/
+.virtualbox/
 .vagrant/
 vagrant_ansible_inventory_*
 ansible.cfg
