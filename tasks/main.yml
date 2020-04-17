@@ -28,8 +28,8 @@
     state: directory
     owner: root
     group: root
-    mode: "{{ sudoers_sudoers_d_dir_mode }}"
-  when: sudoers_sudoers_d_dir_mode is defined
+    mode: "{{ sudoers_sudoers_d_directory_mode }}"
+  when: sudoers_sudoers_d_directory_mode is defined
   tags:
     - configuration
     - sudoers

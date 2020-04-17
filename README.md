@@ -47,7 +47,7 @@ None
 * `sudoers_sudoers_d_files.key.privileges.name`: Name of user or group (group should be prefixed with '%')
 * `sudoers_sudoers_d_files.key.privileges.entry`: A privilege entry
 
-* `sudoers_sudoers_d_dir_mode` [default: keep as is]: Directory mode for `/etc/sudoers.d`, e.g. `'0750'`
+* `sudoers_sudoers_d_directory_mode` [default: keep as is]: Directory mode for `/etc/sudoers.d`, e.g. `'0750'`
 
 ## Dependencies
 
@@ -112,7 +112,7 @@ None
             members: 128.138.0.0/255.255.0.0
         privileges:
           - name: test
-            entry: "ALL=(ALL:ALL) ALL"    
+            entry: "ALL=(ALL:ALL) ALL"
 ```
 
 #### License
