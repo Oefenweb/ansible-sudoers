@@ -22,6 +22,20 @@
     - sudoers
     - sudoers-install
 
+- name: update /etc/sudoers.d directory permissions
+  file:
+    path: /etc/sudoers.d
+    state: directory
+    owner: root
+    group: root
+    mode: "{{ sudoers_sudoers_d_dir_mode }}"
+  when: sudoers_sudoers_d_dir_mode is defined
+  tags:
+    - configuration
+    - sudoers
+    - sudoers-configuration
+    - sudoers-configuration-sudoers-d
+
 - name: update specific configuration files
   template:
     src: etc/sudoers.d/sudoers.j2
