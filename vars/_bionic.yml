@@ -1,4 +1,4 @@
-# vars file for sudoers
+# vars file
 ---
 sudoers_sudoers_preset_defaults:
   - env_reset

@@ -1,4 +1,4 @@
-# defaults file for sudoers
+# defaults file
 ---
 sudoers_sudoers:
   defaults: "{{ sudoers_sudoers_preset_defaults }}"
