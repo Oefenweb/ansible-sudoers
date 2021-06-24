@@ -1,0 +1,7 @@
+# vars file
+---
+sudoers_sudoers_d_files:
+  dummy:
+    privileges:
+      - name: dummy
+        entry: 'ALL=NOPASSWD:ALL'

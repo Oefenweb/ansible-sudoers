@@ -3,11 +3,10 @@
 - hosts: localhost
   connection: local
   become: true
+  pre_tasks:
+    - name: include vars
+      include_vars: "{{ playbook_dir }}/vars/main.yml"
+    - name: include tasks
+      include: "{{ playbook_dir }}/tasks/pre.yml"
   roles:
     - ../../
-  vars:
-    sudoers_sudoers_d_files:
-      travis:
-        privileges:
-          - name: travis
-            entry: 'ALL=NOPASSWD:ALL'
