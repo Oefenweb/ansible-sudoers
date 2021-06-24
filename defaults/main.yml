@@ -5,4 +5,3 @@ sudoers_sudoers:
   privileges: "{{ sudoers_sudoers_preset_privileges }}"
 
 sudoers_sudoers_d_files: {}
-#sudoers_sudoers_d_directory_mode: '0750'
