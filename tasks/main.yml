@@ -62,6 +62,7 @@
     owner: root
     group: root
     mode: 0440
+  when: sudoers_configuration_sudoers | bool
   tags:
     - configuration
     - sudoers
