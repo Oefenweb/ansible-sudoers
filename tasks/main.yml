@@ -47,6 +47,7 @@
     group: root
     mode: 0440
   with_dict: "{{ sudoers_sudoers_d_files }}"
+  when: sudoers_configuration_sudoers_d | bool
   tags:
     - configuration
     - sudoers
