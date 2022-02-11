@@ -6,6 +6,7 @@
     - "_{{ ansible_distribution_release }}.yml"
     - "_{{ ansible_distribution | lower }}.yml"
     - _default.yml
+  when: sudoers_include_variables | bool
   tags:
     - configuration
     - sudoers
