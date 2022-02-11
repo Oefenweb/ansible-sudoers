@@ -7,3 +7,4 @@ sudoers_sudoers:
 sudoers_sudoers_d_files: {}
 
 sudoers_include_variables: true
+sudoers_install: true
