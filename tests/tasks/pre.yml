@@ -1,5 +1,5 @@
 # pre test file
 ---
 - name: create user (if needed)
-  user:
+  ansible.builtin.user:
     name: dummy

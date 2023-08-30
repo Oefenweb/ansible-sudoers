@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: include variables
-  include_vars: "{{ item }}"
+  ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
     - "_{{ ansible_distribution_release }}.yml"
     - "_{{ ansible_distribution | lower }}.yml"
@@ -12,7 +12,7 @@
     - sudoers-include-variables
 
 - name: install
-  apt:
+  ansible.builtin.apt:
     name: "{{ sudoers_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -23,7 +23,7 @@
     - sudoers-install
 
 - name: update /etc/sudoers.d directory permissions
-  file:
+  ansible.builtin.file:
     path: /etc/sudoers.d
     state: directory
     owner: root
@@ -37,7 +37,7 @@
     - sudoers-configuration-sudoers-d
 
 - name: update specific configuration files
-  template:
+  ansible.builtin.template:
     src: etc/sudoers.d/sudoers.j2
     dest: "/etc/sudoers.d/{{ item.key }}"
     validate: "visudo -cf %s"
@@ -52,7 +52,7 @@
     - sudoers-configuration-sudoers-d
 
 - name: update global configuration file
-  template:
+  ansible.builtin.template:
     src: etc/sudoers.j2
     dest: /etc/sudoers
     validate: "visudo -cf %s"
