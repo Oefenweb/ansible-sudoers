@@ -62,7 +62,7 @@ None
 ---
 - hosts: all
   roles:
-    - sudoers
+    - oefenweb.sudoers
 ```
 
 ##### Complex configuration
@@ -71,7 +71,7 @@ None
 ---
 - hosts: all
   roles:
-    - sudoers
+    - oefenweb.sudoers
   vars:
     sudoers_sudoers:
       defaults:
