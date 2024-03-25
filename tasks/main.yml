@@ -6,6 +6,7 @@
     - "_{{ ansible_distribution_release }}.yml"
     - "_{{ ansible_distribution | lower }}.yml"
     - _default.yml
+  when: sudoers_include_variables | bool
   tags:
     - configuration
     - sudoers
@@ -17,6 +18,7 @@
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+  when: sudoers_install | bool
   tags:
     - configuration
     - sudoers
@@ -45,6 +47,7 @@
     group: root
     mode: 0440
   with_dict: "{{ sudoers_sudoers_d_files }}"
+  when: sudoers_configuration_sudoers_d | bool
   tags:
     - configuration
     - sudoers
@@ -59,6 +62,7 @@
     owner: root
     group: root
     mode: 0440
+  when: sudoers_configuration_sudoers | bool
   tags:
     - configuration
     - sudoers

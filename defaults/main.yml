@@ -5,3 +5,8 @@ sudoers_sudoers:
   privileges: "{{ sudoers_sudoers_preset_privileges }}"
 
 sudoers_sudoers_d_files: {}
+
+sudoers_include_variables: true
+sudoers_install: true
+sudoers_configuration_sudoers_d: true
+sudoers_configuration_sudoers: true
