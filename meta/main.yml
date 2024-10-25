@@ -1,9 +1,8 @@
 # meta file
 ---
 galaxy_info:
-  namespace: oefenweb
+  author: oefenweb
   role_name: sudoers
-  author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Manage sudoers and sudoers.d in Debian-like systems
   license: MIT
