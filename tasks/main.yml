@@ -43,7 +43,7 @@
     validate: "visudo -cf %s"
     owner: root
     group: root
-    mode: 0440
+    mode: '0440'
   with_dict: "{{ sudoers_sudoers_d_files }}"
   tags:
     - configuration
@@ -58,7 +58,7 @@
     validate: "visudo -cf %s"
     owner: root
     group: root
-    mode: 0440
+    mode: '0440'
   tags:
     - configuration
     - sudoers
